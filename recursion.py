@@ -3,16 +3,15 @@ import pywhatkit
 from sys import exit
 rand_num = randint(0,3)
 
-
+count = 10
 def recurr_func(guesses=[],mynum=[]):
-    count = 10
+    global count
+    
     if not guesses: #if no previous guesses are in the list
         user_guess = int(input("Please guess my number.\n It is from 0 to 9: "))
         compare_size(rand_num,user_guess)        
         turn = compare_nums(user_guess,rand_num)
-        guesses.append(user_guess)
-        
-       
+        guesses.append(user_guess)    
         mynum.append(rand_num)
         recurr_func(guesses,mynum) 
         count -=1 
