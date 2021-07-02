@@ -52,4 +52,4 @@ def test_phone_number_digits(self):
     assert(phone.isdigit() == True)
 
 if __name__ == '__main__':
-    unittest.main()
+    main()
