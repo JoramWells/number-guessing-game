@@ -6,30 +6,30 @@ rand_num = randint(0,3)
 count = 10
 def recurr_func(guesses=[],mynum=[]):
     global count
-    
-    if not guesses: #if no previous guesses are in the list
-        user_guess = int(input("Please guess my number.\n It is from 0 to 9: "))
-        compare_size(rand_num,user_guess)        
-        turn = compare_nums(user_guess,rand_num)
-        guesses.append(user_guess)    
-        mynum.append(rand_num)
-        recurr_func(guesses,mynum) 
-        count -=1 
-        print(count)
-    else:
-        user_guess = int(input("Try again.\n It is from 0 to 9: "))
-        if user_guess in guesses:
-            print("You already guessed that number.")
-            compare_size(rand_num,user_guess)
-            count-=1
-            print("count", count)
+
+    while(count > 0): 
+        if not guesses: #if no previous guesses are in the list
+            user_guess = int(input("Please guess my number.\n It is from 0 to 9: "))
+            compare_size(rand_num,user_guess)        
+            turn = compare_nums(user_guess,rand_num)
+            count -=1 
+            guesses.append(user_guess)    
+            mynum.append(rand_num)
             recurr_func(guesses,mynum) 
+
         else:
-            turn = compare_nums(user_guess,mynum[0])
-            guesses.append(user_guess)
-            count-=1
-            print("count", count)
-            recurr_func(guesses,mynum) 
+            user_guess = int(input("Try again.\n It is from 0 to 100: "))
+            if user_guess in guesses:
+                print("You guessed that number.")
+                compare_size(rand_num,user_guess)
+                count-=1
+                recurr_func(guesses,mynum) 
+            else:
+                turn = compare_nums(user_guess,mynum[0])
+                guesses.append(user_guess)
+                count-=1
+                print("count", count)
+                recurr_func(guesses,mynum) 
         
 
 def compare_nums(your_guess,my_num):
