@@ -55,8 +55,8 @@ def compare_size(rand,guess):
 
 
 # Send whatsapp message *** sendwhatmsg(number,"message", hr, min)
-def send_msg():
-    message = "Hey it worked"
+def send_msg(score):
+    message = "You scored", score
     pywhatkit.sendwhatmsg('+254799980846',message,22,56)
 
 
