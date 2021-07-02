@@ -33,12 +33,12 @@ input_phone = "+254799980846"
 #     assert(4,4)
 
 
-def test_input_pass():
-    assert(int(input("Input greater than or equal to 0: ")) >= 0)
+# def test_input_pass():
+#     assert(int(input("Input greater than or equal to 0: ")) >= 0)
 
 
-def test_input_fail():
-    assert(int(input("Input lesser than 0: ")) < 0)
+# def test_input_fail():
+#     assert(int(input("Input lesser than 0: ")) < 0)
 
 
 #Check phone number length
