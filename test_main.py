@@ -17,10 +17,10 @@ input_phone = "+254799980846"
 #     assertEqual(result, None)
 
 
-# #Check if input > answer
-# def test_greater_than():
-#     result = compare_nums.is_greater_than(4,3)
-#     assertTrue(result,False)
+#Check if input > answer
+def test_greater_than():
+    result = compare_nums.is_greater_than(4,3)
+    assert(result == False)
 
 
 def test_lesser_than():
