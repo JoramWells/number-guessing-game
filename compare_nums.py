@@ -9,3 +9,5 @@ def compare_nums(your_guess,my_num):
 def is_greater_than(rand,guess):
     if(rand > guess):
         return True
+    else:
+        return False
