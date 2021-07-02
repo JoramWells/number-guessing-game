@@ -1,7 +1,7 @@
 from random import randint
 import pywhatkit
 from sys import exit
-# import compare_nums
+import datetime
 
 # Generate random number ffrom 0-99
 rand_num = randint(0,99)
@@ -56,12 +56,19 @@ def compare_size(rand,guess):
         return
 
 def get_phone_number():
-    return input("Enter your phone number: ")
+    phone_number = input("Enter your phone number: ")
+    if(len(phone_number) != 13):
+        return input("Please enter a valid phone number: ")
+    if(phone_number[:4] != "+254"):
+        return input("Country code begins with +254: ")
+    return phone_number
 
 
 
 # Send whatsapp message *** sendwhatmsg(number,"message", hr, min)
 def send_msg(score):
+    hour = datetime.datetime.now().min
+    minute = datetime.datetime.now().min
     message = "You scored", score
     pywhatkit.sendwhatmsg(get_phone_number(),message,22,56)
 
