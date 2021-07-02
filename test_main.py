@@ -37,7 +37,9 @@ def test_phone_number_length():
 #Check if phone number digits
 def test_phone_number_digits():
     phone = "254799980846"
-    assert(input_phone[1:]==phone)
+    no = compare_nums.get_phone_number(input_phone)
+    no = no[:]
+    assert(no==phone)
 
 def test_phone_is_digit():
     assert(input_phone[1:].isdigit() == True)

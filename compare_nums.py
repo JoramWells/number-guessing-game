@@ -21,8 +21,6 @@ def decrement(count):
 
 # phone_number = input("Enter your phone number: ")
 def get_phone_number(phone_number):
-    
-
     if(len(phone_number) != 13):
         return input("Please enter a valid phone number: ")
 
