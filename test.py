@@ -3,6 +3,7 @@ from unittest.mock import patch
 # import app
 import compare_nums
 
+input_phone = "+254799980846"
 class TestInput(unittest.TestCase):
 
     def test_equal(self):
@@ -20,9 +21,16 @@ class TestInput(unittest.TestCase):
     def test_decrement(self):
         result = compare_nums.decrement(5)
         self.assertEqual(4,4)
+    def test_input_pass(self):
+        assert(int(input("Input greater than or equal to 0: ")) >= 0)
+    def test_input_fail(self):
+        assert(int(input("Input lesser than 0: ")) < 0)
+    def test_phone_number_length(self):
+        assert(len(input_phone) == 13)
+    def test_phone_number_digits(self):
+        phone = "254799980846"
+        assert(input_phone[1:]==phone)
+        assert(phone.isdigit() == True)
     
-    # def test_input(self):
-    #     assert(int(app.getInput()) == 1)
-
 if __name__ == '__main__':
     unittest.main()

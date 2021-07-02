@@ -1,12 +1,13 @@
 from random import randint
 import pywhatkit
 from sys import exit
-import compare_nums
+# import compare_nums
 
 # Generate random number ffrom 0-99
 rand_num = randint(0,99)
 
 count = 10
+# phone_number= input("Enter your phone number: ")
 
 def recurr_func(guesses=[],num=[]):
     # Declare count as global
@@ -16,7 +17,7 @@ def recurr_func(guesses=[],num=[]):
         if not guesses: #if no previous guesses are in the list
             user_guess = int(input("Please guess another number.\nRange(0,99)\n"))
             compare_size(rand_num,user_guess)        
-            turn = compare_nums(user_guess,rand_num)
+            turn = compare_nums(user_guess,rand_num,count)
             count -=1 
             print("You have", count ," more chances to go")
             guesses.append(user_guess)    
@@ -32,16 +33,17 @@ def recurr_func(guesses=[],num=[]):
                 print("You have", count ," more chances to go")
                 recurr_func(guesses,num) 
             else:
-                turn = compare_nums(user_guess,num[0])
+                turn = compare_nums(user_guess,num[0], count)
                 guesses.append(user_guess)
                 count-=1
                 print("You have", count ," to go")
                 recurr_func(guesses,num) 
         
 
-def compare_nums(your_guess,my_num):
+def compare_nums(your_guess,my_num,count):
     if your_guess == my_num:
-        send_msg()
+        send_msg(count)
+        print("Final", count)
         exit()
     else:
         return
@@ -53,11 +55,15 @@ def compare_size(rand,guess):
     else:
         return
 
+def get_phone_number():
+    return input("Enter your phone number: ")
+
+
 
 # Send whatsapp message *** sendwhatmsg(number,"message", hr, min)
 def send_msg(score):
     message = "You scored", score
-    pywhatkit.sendwhatmsg('+254799980846',message,22,56)
+    pywhatkit.sendwhatmsg(get_phone_number(),message,22,56)
 
 
 recurr_func()
