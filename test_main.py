@@ -23,9 +23,9 @@ input_phone = "+254799980846"
 #     assertTrue(result,False)
 
 
-# def test_lesser_than():
-#     result = compare_nums.is_greater_than(3,4)
-#     assertFalse(result, False)
+def test_lesser_than():
+    result = compare_nums.is_greater_than(3,4)
+    assert(result == False)
 
 
 # Check decrement func
