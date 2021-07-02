@@ -34,7 +34,7 @@ def recurr_func(guesses=[],mynum=[]):
 
 def compare_nums(your_guess,my_num):
     if your_guess == my_num:
-        send_msg()
+        # send_msg()
         exit()
     else:
         return
