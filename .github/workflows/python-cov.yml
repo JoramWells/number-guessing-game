@@ -7,7 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      COVERAGE_SINGLE: 5
+      COVERAGE_SINGLE: 2
       COVERAGE_TOTAL: 5
 
     steps:
