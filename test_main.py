@@ -42,9 +42,10 @@ def test_phone_number_digits():
     assert(no==phone)
 
 def test_phone_is_digit():
-    no = compare_nums.get_phone_number(input_phone)
-    no = no.isdigit()
-    assert(no == True)
+    num = compare_nums.get_phone_number(input_phone)
+    num = num[1:]
+    num = num.isdigit()
+    assert(num == True)
 
 
 def test_phone_country_code():
