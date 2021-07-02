@@ -1,4 +1,4 @@
-import compare_nums
+from python import compare_nums
 
 
 input_phone = "+254799980846"
