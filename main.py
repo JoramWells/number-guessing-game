@@ -43,7 +43,7 @@ def recurr_func(guesses=[], num=[]):
         
 
 def compare_nums(your_guess, my_num, count):
-    if your_guess == my_num:
+    if (your_guess == my_num):
         send_msg(count)
         print(type(datetime.datetime.now().min))
         print("Final", count)
