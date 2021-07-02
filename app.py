@@ -1,9 +1,11 @@
 from random import randint
 import pywhatkit
 from sys import exit
+import compare_nums
 rand_num = randint(0,99)
 
 count = 10
+
 def recurr_func(guesses=[],mynum=[]):
     # Declare count as global
     global count
