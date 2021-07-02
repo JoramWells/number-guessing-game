@@ -1,18 +1,20 @@
 from random import randint
 import pywhatkit
 from sys import exit
-rand_num = randint(0,3)
+rand_num = randint(0,99)
 
 count = 10
 def recurr_func(guesses=[],mynum=[]):
+    # Declare count as global
     global count
 
     while(count > 0): 
         if not guesses: #if no previous guesses are in the list
-            user_guess = int(input("Please guess my number.\n It is from 0 to 9: "))
+            user_guess = int(input("Please guess my number.\nRange(0,99)\n"))
             compare_size(rand_num,user_guess)        
             turn = compare_nums(user_guess,rand_num)
             count -=1 
+            print("You have", count ," more chances to go")
             guesses.append(user_guess)    
             mynum.append(rand_num)
             recurr_func(guesses,mynum) 
@@ -23,18 +25,19 @@ def recurr_func(guesses=[],mynum=[]):
                 print("You guessed that number.")
                 compare_size(rand_num,user_guess)
                 count-=1
+                print("You have", count ," more chances to go")
                 recurr_func(guesses,mynum) 
             else:
                 turn = compare_nums(user_guess,mynum[0])
                 guesses.append(user_guess)
                 count-=1
-                print("count", count)
+                print("You have", count ," to go")
                 recurr_func(guesses,mynum) 
         
 
 def compare_nums(your_guess,my_num):
     if your_guess == my_num:
-        # send_msg()
+        send_msg()
         exit()
     else:
         return
