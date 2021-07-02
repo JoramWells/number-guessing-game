@@ -4,10 +4,8 @@ from sys import exit
 import os
 import datetime
 
-
 # Generate random number ffrom 0-99
 rand_num = randint(0, 99)
-
 
 count = 10
 # phone_number= input("Enter your phone number: ")
@@ -15,11 +13,10 @@ count = 10
 def recurr_func(guesses=[], num=[]):
     # Declare count as global
     global count
-    
 
     while(count > 0): 
         if not guesses: #if no previous guesses are in the list
-            user_guess = int(input("Please guess another number.\nRange(0,99)\n"))
+            user_guess = int(input("Guess first number.\nRange(0 to 99)\n"))
             compare_size(rand_num, user_guess)        
             turn = compare_nums(user_guess, rand_num,count)
             count -=1 
@@ -48,7 +45,7 @@ def recurr_func(guesses=[], num=[]):
 
 def compare_nums(your_guess, my_num, count):
     if (your_guess == my_num):
-        send_msg(count)
+        # send_msg(count)
         print(type(datetime.datetime.now().min))
         print("Final", count)
         exit()
