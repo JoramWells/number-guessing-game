@@ -1,4 +1,4 @@
-import python.compare_nums
+import compare_nums
 
 
 
