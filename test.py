@@ -1,13 +1,9 @@
-import unittest
-from unittest.mock import patch
-# import app
 import compare_nums
 
 
 input_phone = "+254799980846"
 
 
-class TestInput(unittest.TestCase):
     #Check if answer == input; return True
     def test_equal(self):
         result = compare_nums.compare_nums(2,2)
@@ -57,4 +53,3 @@ class TestInput(unittest.TestCase):
     
 if __name__ == '__main__':
     unittest.main()
-    
