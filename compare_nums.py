@@ -11,3 +11,6 @@ def is_greater_than(rand,guess):
         return True
     else:
         return False
+def decrement(count):
+    count -= 1
+    return count
