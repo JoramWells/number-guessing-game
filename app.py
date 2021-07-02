@@ -2,6 +2,8 @@ from random import randint
 import pywhatkit
 from sys import exit
 import compare_nums
+
+# Generate random number ffrom 0-99
 rand_num = randint(0,99)
 
 count = 10
@@ -52,9 +54,10 @@ def compare_size(rand,guess):
         return
 
 
-# Send whatsapp message
+# Send whatsapp message *** sendwhatmsg(number,"message", hr, min)
 def send_msg():
-    pywhatkit.sendwhatmsg('+254799980846','wtf',22,56)
+    message = "Hey it worked"
+    pywhatkit.sendwhatmsg('+254799980846',message,22,56)
 
 
 recurr_func()
