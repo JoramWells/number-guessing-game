@@ -32,7 +32,7 @@ def test_decrement():
 
 #Check phone number length
 def test_phone_number_length():
-    assert(len(input_phone) == 13)
+    assert(len(compare_nums.get_phone_number(input_phone)) == 13)
 
 #Check if phone number digits
 def test_phone_number_digits():
@@ -45,5 +45,6 @@ def test_phone_is_digit():
 
 def test_phone_country_code():
     assert(input_phone[:4] == "+254")
+
 
 
