@@ -1,9 +1,6 @@
 import compare_nums
 
-
-
 input_phone = "+254799980846"
-
 
 #Check if answer == input; return True
 def test_equal():
@@ -34,8 +31,8 @@ def test_decrement():
     assert(result == 4)
 
 
-def test_input_pass():
-    assert(int(input("Input greater than or equal to 0: ")) >= 0)
+# def test_input_pass():
+#     assert(int(input("Input greater than or equal to 0: ")) >= 0)
 
 
 # def test_input_fail():
@@ -51,3 +48,9 @@ def test_phone_number_digits():
     phone = "254799980846"
     assert(input_phone[1:]==phone)
     assert(phone.isdigit() == True)
+
+
+def test_phone_country_code():
+    assert(input_phone[:4] == "+254")
+
+
