@@ -47,7 +47,9 @@ def test_phone_number_length():
 def test_phone_number_digits():
     phone = "254799980846"
     assert(input_phone[1:]==phone)
-    assert(phone.isdigit() == True)
+
+def test_phone_is_digit():
+    assert(input_phone[1:].isdigit() == True)
 
 
 def test_phone_country_code():
