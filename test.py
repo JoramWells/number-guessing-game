@@ -50,6 +50,3 @@ def test_phone_number_digits(self):
     phone = "254799980846"
     assert(input_phone[1:]==phone)
     assert(phone.isdigit() == True)
-
-if __name__ == '__main__':
-    main()
