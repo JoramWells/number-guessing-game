@@ -20,7 +20,7 @@ input_phone = "+254799980846"
 #Check if input > answer
 def test_greater_than():
     result = compare_nums.is_greater_than(4,3)
-    assert(result == False)
+    assert(result == True)
 
 
 def test_lesser_than():
