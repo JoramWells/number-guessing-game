@@ -10,7 +10,7 @@ def recurr_func(guesses=[],mynum=[]):
 
     while(count > 0): 
         if not guesses: #if no previous guesses are in the list
-            user_guess = int(input("Please guess my number.\nRange(0,99)\n"))
+            user_guess = int(input("Please guess another number.\nRange(0,99)\n"))
             compare_size(rand_num,user_guess)        
             turn = compare_nums(user_guess,rand_num)
             count -=1 
@@ -20,9 +20,9 @@ def recurr_func(guesses=[],mynum=[]):
             recurr_func(guesses,mynum) 
 
         else:
-            user_guess = int(input("Try again.\n It is from 0 to 100: "))
+            user_guess = int(input("Try again.\nRange(0,99)\n "))
             if user_guess in guesses:
-                print("You guessed that number.")
+                print("Please guess another number.")
                 compare_size(rand_num,user_guess)
                 count-=1
                 print("You have", count ," more chances to go")
