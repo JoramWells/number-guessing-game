@@ -30,15 +30,6 @@ def test_decrement():
     result = compare_nums.decrement(5)
     assert(result == 4)
 
-
-# def test_input_pass():
-#     assert(int(input("Input greater than or equal to 0: ")) >= 0)
-
-
-# def test_input_fail():
-#     assert(int(input("Input lesser than 0: ")) < 0)
-
-
 #Check phone number length
 def test_phone_number_length():
     assert(len(input_phone) == 13)
