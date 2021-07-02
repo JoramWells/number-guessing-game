@@ -1,0 +1,1 @@
+[![GitHub issues](https://img.shields.io/github/issues/bramuel/number-guessing-game?style=plastic)](https://github.com/bramuel/number-guessing-game/issues)
