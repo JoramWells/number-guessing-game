@@ -49,7 +49,9 @@ def test_phone_is_digit():
 
 
 def test_phone_country_code():
-    assert(input_phone[:4] == "+254")
+    num = compare_nums.get_phone_number(input_phone)
+    num = num[:4]
+    assert(num== "+254")
 
 
 
