@@ -6,7 +6,7 @@ rand_num = randint(0,99)
 
 count = 10
 
-def recurr_func(guesses=[],mynum=[]):
+def recurr_func(guesses=[],num=[]):
     # Declare count as global
     global count
 
@@ -18,8 +18,8 @@ def recurr_func(guesses=[],mynum=[]):
             count -=1 
             print("You have", count ," more chances to go")
             guesses.append(user_guess)    
-            mynum.append(rand_num)
-            recurr_func(guesses,mynum) 
+            num.append(rand_num)
+            recurr_func(guesses,num) 
 
         else:
             user_guess = int(input("Try again.\nRange(0,99)\n "))
@@ -28,13 +28,13 @@ def recurr_func(guesses=[],mynum=[]):
                 compare_size(rand_num,user_guess)
                 count-=1
                 print("You have", count ," more chances to go")
-                recurr_func(guesses,mynum) 
+                recurr_func(guesses,num) 
             else:
-                turn = compare_nums(user_guess,mynum[0])
+                turn = compare_nums(user_guess,num[0])
                 guesses.append(user_guess)
                 count-=1
                 print("You have", count ," to go")
-                recurr_func(guesses,mynum) 
+                recurr_func(guesses,num) 
         
 
 def compare_nums(your_guess,my_num):
