@@ -8,6 +8,9 @@ class TestInput(unittest.TestCase):
     def test_equal(self):
         result = compare_nums.compare_nums(2,2)
         self.assertEqual(result,True)
+    def test_not_equal(self):
+        result = compare_nums.compare_nums(1,2)
+        self.assertEqual(result, None)
     def test_greater_than(self):
         result = compare_nums.is_greater_than(4,3)
         self.assertTrue(result,False)
