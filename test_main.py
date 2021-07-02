@@ -11,10 +11,10 @@ input_phone = "+254799980846"
 #     assertEqual(result,True)
 
 
-# # Check if input != answer
-# def test_not_equal():
-#     result = compare_nums.compare_nums(1,2)
-#     assertEqual(result, None)
+# Check if input != answer
+def test_not_equal():
+    result = compare_nums.compare_nums(1,2)
+    assertEqual(result == False)
 
 
 #Check if input > answer
