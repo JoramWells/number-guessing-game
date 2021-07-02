@@ -14,6 +14,7 @@ count = 10
 def recurr_func(guesses=[], num=[]):
     # Declare count as global
     global count
+    
 
     while(count > 0): 
         if not guesses: #if no previous guesses are in the list
@@ -27,13 +28,19 @@ def recurr_func(guesses=[], num=[]):
             recurr_func(guesses,num) 
 
         else:
+
+
             user_guess = int(input("Try again.\nRange(0,99)\n "))
+
+
             if user_guess in guesses:
                 print("Please guess another number.")
                 compare_size(rand_num, user_guess)
                 count-=1
                 print("You have", count , " more chances to go")
                 recurr_func(guesses, num) 
+
+
             else:
                 turn = compare_nums(user_guess,num[0], count)
                 guesses.append(user_guess)
@@ -43,11 +50,15 @@ def recurr_func(guesses=[], num=[]):
         
 
 def compare_nums(your_guess, my_num, count):
+
+
     if (your_guess == my_num):
         send_msg(count)
         print(type(datetime.datetime.now().min))
         print("Final", count)
         exit()
+
+
     else:
         return
 
@@ -55,27 +66,37 @@ def compare_nums(your_guess, my_num, count):
 def compare_size(rand,guess):
     if(rand > guess):
         print("Value is less by: ", rand - guess)
+
+
     elif(rand<guess):
         print("Value more by: ", guess - rand)
+
+
     else:
         return
 
 
 def get_phone_number():
     phone_number = input("Enter your phone number: ")
+
+
     if(len(phone_number) != 13):
         return input("Please enter a valid phone number: ")
+
+
     if(phone_number[:4] != "+254"):
         return input("Country code begins with +254: ")
+
+
     return phone_number
 
 
 # Send whatsapp message *** sendwhatmsg(number,"message", hr, min)
 def send_msg(score):
-    hour = datetime.datetime.now().min
-    minute = datetime.datetime.now().min
+    # hour = datetime.datetime.now().min
+    # minute = datetime.datetime.now().min
     message = "You scored", score
-    pywhatkit.sendwhatmsg(get_phone_number(), message, 22, 56)
+    pywhatkit.sendwhatmsg(get_phone_number() , message , 22 , 56)
 
 
 recurr_func()

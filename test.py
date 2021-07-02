@@ -43,7 +43,7 @@ class TestInput(unittest.TestCase):
 
     def test_input_fail(self):
         assert(int(input("Input lesser than 0: ")) < 0)
-        
+
     
     #Check phone number length
     def test_phone_number_length(self):
@@ -57,3 +57,4 @@ class TestInput(unittest.TestCase):
     
 if __name__ == '__main__':
     unittest.main()
+    
