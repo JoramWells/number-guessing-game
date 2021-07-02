@@ -31,7 +31,7 @@ input_phone = "+254799980846"
 # Check decrement func
 def test_decrement():
     result = compare_nums.decrement(5)
-    assert(4,4)
+    assert(result == 4)
 
 
 # def test_input_pass():
