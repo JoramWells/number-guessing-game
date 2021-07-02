@@ -4,33 +4,33 @@ import compare_nums
 input_phone = "+254799980846"
 
 
-#Check if answer == input; return True
-def test_equal():
-    result = compare_nums.compare_nums(2,2)
-    assertEqual(result,True)
+# #Check if answer == input; return True
+# def test_equal():
+#     result = compare_nums.compare_nums(2,2)
+#     assertEqual(result,True)
 
 
-# Check if input != answer
-def test_not_equal():
-    result = compare_nums.compare_nums(1,2)
-    assertEqual(result, None)
+# # Check if input != answer
+# def test_not_equal():
+#     result = compare_nums.compare_nums(1,2)
+#     assertEqual(result, None)
 
 
-#Check if input > answer
-def test_greater_than():
-    result = compare_nums.is_greater_than(4,3)
-    assertTrue(result,False)
+# #Check if input > answer
+# def test_greater_than():
+#     result = compare_nums.is_greater_than(4,3)
+#     assertTrue(result,False)
 
 
-def test_lesser_than():
-    result = compare_nums.is_greater_than(3,4)
-    assertFalse(result, False)
+# def test_lesser_than():
+#     result = compare_nums.is_greater_than(3,4)
+#     assertFalse(result, False)
 
 
-# Check decrement func
-def test_decrement():
-    result = compare_nums.decrement(5)
-    assertEqual(4,4)
+# # Check decrement func
+# def test_decrement():
+#     result = compare_nums.decrement(5)
+#     assert(4,4)
 
 
 def test_input_pass():
