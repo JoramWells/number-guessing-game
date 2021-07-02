@@ -5,10 +5,10 @@ import compare_nums
 input_phone = "+254799980846"
 
 
-# #Check if answer == input; return True
-# def test_equal():
-#     result = compare_nums.compare_nums(2,2)
-#     assertEqual(result,True)
+#Check if answer == input; return True
+def test_equal():
+    result = compare_nums.compare_nums(2,2)
+    assert(result == True)
 
 
 # Check if input != answer
