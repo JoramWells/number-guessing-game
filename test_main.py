@@ -34,8 +34,8 @@ def test_decrement():
     assert(result == 4)
 
 
-# def test_input_pass():
-#     assert(int(input("Input greater than or equal to 0: ")) >= 0)
+def test_input_pass():
+    assert(int(input("Input greater than or equal to 0: ")) >= 0)
 
 
 # def test_input_fail():
