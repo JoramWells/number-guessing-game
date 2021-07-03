@@ -1,7 +1,6 @@
 from random import randint
 import pywhatkit
 from sys import exit
-import os
 import datetime
 
 # Generate random number ffrom 0-99
@@ -18,7 +17,7 @@ def recurr_func(guesses=[], num=[]):
         if not guesses: #if no previous guesses are in the list
             user_guess = int(input("Guess first number.\nRange(0 to 99)\n"))
             compare_size(rand_num, user_guess)        
-            turn = compare_nums(user_guess, rand_num,count)
+            compare_nums(user_guess, rand_num,count)
             count -=1 
             print("You have", count , " more chances to go")
             guesses.append(user_guess)    
@@ -36,7 +35,7 @@ def recurr_func(guesses=[], num=[]):
                 recurr_func(guesses, num) 
 
             else:
-                turn = compare_nums(user_guess,num[0], count)
+                compare_nums(user_guess,num[0], count)
                 guesses.append(user_guess)
                 count-=1
                 print("You have", count ," to go")
@@ -45,8 +44,8 @@ def recurr_func(guesses=[], num=[]):
 
 def compare_nums(your_guess, my_num, count):
     if (your_guess == my_num):
-        # send_msg(count)
-        print(type(datetime.datetime.now().min))
+        send_msg(count)
+        # print(type(datetime.datetime.now().min))
         print("Final", count)
         exit()
 
@@ -58,7 +57,7 @@ def compare_size(rand,guess):
     if(rand > guess):
         print("Value is less by: ", rand - guess)
 
-    elif(rand<guess):
+    elif(rand < guess):
         print("Value more by: ", guess - rand)
 
     else:
