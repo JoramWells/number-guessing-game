@@ -18,12 +18,11 @@ def decrement(count):
     return count
 
 
-def get_phone_number_length(phone_number):
+# phone_number = input("Enter your phone number: ")
+def get_phone_number(phone_number):
     if(len(phone_number) != 13):
         return input("Please enter a valid phone number: ")
 
-# phone_number = input("Enter your phone number: ")
-def get_phone_number(phone_number):
     if(phone_number[:4] != "+254"):
         return input("Country code begins with +254: ")
 
