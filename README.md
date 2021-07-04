@@ -3,7 +3,7 @@
 
 # Run > python main.py
 ## Running test > pytest
-###Running verbose test > pytest -v
+### Running verbose test > pytest -v
 
 1. You'll also be prompted to enter phone number:
 2. Enter the first number to guess: 
