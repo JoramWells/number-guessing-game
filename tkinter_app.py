@@ -36,9 +36,9 @@ def compare_size(rand,guess,count):
         return ("Value more by: ", guess - rand, " total score ", count)
 
     else:
-        guess_button.configure(state='disabled')
-        number_form.configure(state='disabled')
-        send_button.config(state='normal')
+        guess_btn.configure(state='disabled')
+        no_form.configure(state='disabled')
+        send_btn.config(state='normal')
         return "Total score is ", count, " please enter your number in the field above"
 
 
@@ -72,7 +72,7 @@ def play_game():
     valid = False
     if not valid:
         try:
-            choice = int(number_form.get())
+            choice = int(no_form.get())
             result = compare_size(TARGET,choice,count)    
             update(result)
         except ValueError:
@@ -87,19 +87,14 @@ phone_lable = tk.Label(window, text="Enter phone number", font=("Arial", 11, "no
 
 
 
-guess_button = tk.Button(window,text="Guess",font=("Arial",13), state='normal', fg="#13d675",bg="#282C35", command=play_game)
-send_button = tk.Button(window,text="SEND",font=("Arial",13), state='disabled', fg="gray",bg="#0088D8", command=get_phone_number)
+guess_btn = tk.Button(window,text="Guess",font=("Arial",13), state='normal', fg="#13d675",bg="#282C35", command=play_game)
+send_btn = tk.Button(window,text="SEND",font=("Arial",13), state='disabled', fg="white",bg="#0088D8", command=get_phone_number)
 
 
-# Exit Button
-exit_button = tk.Button(window,text="Exit Game",font=("Arial",14), fg="White", bg="#b82741", command=exit)
-
-
-# Entry Fields
-guessed_number = tk.StringVar()
+exit_btn = tk.Button(window,text="Exit Game",font=("Arial",14), fg="White", bg="#b82741", command=exit)
+guessed_num = tk.StringVar()
 phone_number = tk.StringVar()
-
-number_form = tk.Entry(window,font=("Arial",11),textvariable=guessed_number)
+no_form = tk.Entry(window,font=("Arial",11),textvariable=guessed_num)
 phone_form = tk.Entry(window,font=("Arial",11),textvariable=phone_number)
 
 
@@ -109,13 +104,13 @@ title.place(x=290, y=50)
 result.place(x=250, y=250)
 
 # Place the buttons
-exit_button.place(x=300,y=320)
-guess_button.place(x=450, y=145) 
-send_button.place(x=450, y=210) 
+exit_btn.place(x=300,y=320)
+guess_btn.place(x=450, y=145) 
+send_btn.place(x=450, y=210) 
 
 
 # Place the entry field
-number_form.place(x=180, y=150)
+no_form.place(x=180, y=150)
 phone_form.place(x=180, y=220)
 phone_lable.place(x=180, y=195)
 
