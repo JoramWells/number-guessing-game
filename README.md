@@ -1,9 +1,10 @@
 [![GitHub issues](https://img.shields.io/github/issues/bramuel/number-guessing-game?style=plastic)](https://github.com/bramuel/number-guessing-game/issues)
 [![GitHub forks](https://img.shields.io/github/forks/bramuel/number-guessing-game)](https://github.com/bramuel/number-guessing-game/network)
 
-# Run > python main.py
-## Running test > pytest
-### Running verbose test > pytest -v
+## Run CLI app > python main.py
+## Run GUI app > python tkinter_app.py
+### Running test > pytest
+#### Running verbose test > pytest -v
 
 1. You'll also be prompted to enter phone number:
 2. Enter the first number to guess: 
