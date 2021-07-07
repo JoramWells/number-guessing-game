@@ -299,3 +299,13 @@ Time: 7:38
 Phone number: +254799980846
 Message: 8
 --------------------
+Date: 7:7:2021
+Time: 7:46
+Phone number: +254799980846
+Message: 8
+--------------------
+Date: 7:7:2021
+Time: 7:48
+Phone number: +254799980846
+Message: You have successfully completed the game!!8
+--------------------

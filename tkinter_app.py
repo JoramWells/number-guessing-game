@@ -14,7 +14,7 @@ window.config(bg="#36454f")
 
 window.resizable(width=True,height=True)
 
-window.title('Guessing Game')
+window.title('Amazing Game')
 
 # The code for the buttons and text and other 
 # interactive UI elements go here 
@@ -32,7 +32,6 @@ def compare_size(rand,guess):
         return ("Value is less by: {}".format(rand - guess))
 
     elif(rand < guess):
-        count -= 1
         return ("Value more by: ", guess - rand, " total score ", count)
 
     else:
@@ -82,8 +81,8 @@ def get_phone_number():
 def send_msg(phone_number,count):
     hour = int(datetime.datetime.now().hour)
     minute = int(datetime.datetime.now().minute)
-    message = "You have successfully completed the game!!",count
-    pywhatkit.sendwhatmsg(phone_number , count , hour , minute+2)
+    message = "You have successfully completed the game!! Your score is " + str(count)
+    pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
     exit()
 
 
