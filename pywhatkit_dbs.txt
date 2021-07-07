@@ -249,3 +249,38 @@ Time: 6:6
 Phone number: +254799980846
 Message: You scored  out of 10
 --------------------
+Date: 7:7:2021
+Time: 6:28
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 6:32
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 6:37
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 6:41
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 6:59
+Phone number: +253799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 7:12
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 7:17
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------

@@ -1,4 +1,5 @@
 import tkinter as tk
+from sys import exit
 import random
 import pywhatkit
 import datetime
@@ -39,18 +40,41 @@ def compare_size(rand,guess,count):
         guess_btn.configure(state='disabled')
         no_form.configure(state='disabled')
         send_btn.config(state='normal')
-        return "Total score is ", count, " please enter your number in the field above"
-def get_count(count):
-    return count
+        return "Please enter your number in the field above"
+
+def phone_is_digit(number):
+    number = number[1:]
+    if(number.isdigit() == False):
+        return False
+    else:
+        pass
+
+def get_country_code(phone_number):
+    code = phone_number[:4]
+    if(code != "+254"):
+        return False
+    else:
+        pass
+def get_number_len(phone_number):
+    if(len(phone_number) != 13):
+        return False
+    else:
+        pass
 
 def get_phone_number():
     phone_number = phone_form.get()
+    code = get_country_code(phone_number)
+    length = get_number_len(phone_number)
+    is_digit = phone_is_digit(phone_number)
 
-    if(phone_number[:4] != "+254"):
+    if(code == False):
         result = "Country code begins with +254: "
         update(result)
-    elif(len(phone_number) != 13):        
-        result =  "Please enter a valid phone number: "
+    elif(length == False):        
+        result =  "The number should be 13 digits. "
+        update(result)
+    elif(is_digit==False):
+        result = "The number should be a digit. "
         update(result)
     else:
         send_msg(phone_number)
@@ -58,9 +82,9 @@ def get_phone_number():
 def send_msg(phone_number):
     hour = int(datetime.datetime.now().hour)
     minute = int(datetime.datetime.now().minute)
-    message = "You scored  out of 10"
-    update(message)
+    message = "You have successfully completed the game!!"
     pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
+    exit()
 
 
 def game():
