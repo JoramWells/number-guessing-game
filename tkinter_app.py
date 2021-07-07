@@ -27,10 +27,9 @@ def update(text):
     result.configure(text=text)
 
 
-def compare_size(rand,guess,count):
+def compare_size(rand,guess):
     if(rand > guess):
-        count -= 1
-        return ("Value is less by: {}".format(rand - guess), " total score {}".format(count))
+        return ("Value is less by: {}".format(rand - guess))
 
     elif(rand < guess):
         count -= 1
@@ -40,6 +39,7 @@ def compare_size(rand,guess,count):
         guess_btn.configure(state='disabled')
         no_form.configure(state='disabled')
         send_btn.config(state='normal')
+        phone_form.config(state='normal')
         return "Please enter your number in the field above"
 
 def phone_is_digit(number):
@@ -77,27 +77,32 @@ def get_phone_number():
         result = "The number should be a digit. "
         update(result)
     else:
-        send_msg(phone_number)
+        send_msg(phone_number,count)
 
-def send_msg(phone_number):
+def send_msg(phone_number,count):
     hour = int(datetime.datetime.now().hour)
     minute = int(datetime.datetime.now().minute)
-    message = "You have successfully completed the game!!"
-    pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
+    message = "You have successfully completed the game!!",count
+    pywhatkit.sendwhatmsg(phone_number , count , hour , minute+2)
     exit()
 
 
 def game():
     global count
     valid = False
-    if not valid:
-        try:
-            choice = int(no_form.get())
-            result = compare_size(TARGET,choice,count)    
-            update(result)
-        except ValueError:
-            result = "Invalid input"
-            update(result)
+    if(count >0):
+        if not valid:
+            try:
+                count -= 1
+                choice = int(no_form.get())
+                result = compare_size(TARGET,choice)    
+                update(result)
+            except ValueError:
+                result = "Invalid input"
+                update(result)
+    else:
+        result = "Exceeded maximum trials please restart the game."
+        update(result)
 
 
 title = tk.Label(window,text="Amazing game",font=("Arial",18),fg="#fffcbd",bg="#36454f")
@@ -112,7 +117,7 @@ exit_btn = tk.Button(window,text="Exit Game",font=("Arial",14), fg="White", bg="
 guessed_num = tk.StringVar()
 phone_number = tk.StringVar()
 no_form = tk.Entry(window,font=("Arial",11),textvariable=guessed_num)
-phone_form = tk.Entry(window,font=("Arial",11),textvariable=phone_number)
+phone_form = tk.Entry(window,font=("Arial",11), state="disabled",textvariable=phone_number)
 
 
 title.place(x=290, y=50)

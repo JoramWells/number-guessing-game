@@ -284,3 +284,18 @@ Time: 7:17
 Phone number: +254799980846
 Message: You have successfully completed the game!!
 --------------------
+Date: 7:7:2021
+Time: 7:22
+Phone number: +254799980846
+Message: You have successfully completed the game!!
+--------------------
+Date: 7:7:2021
+Time: 7:35
+Phone number: +254799980846
+Message: <built-in method count of str object at 0x000001C5564519F0>
+--------------------
+Date: 7:7:2021
+Time: 7:38
+Phone number: +254799980846
+Message: 8
+--------------------
