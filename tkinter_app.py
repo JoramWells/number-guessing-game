@@ -40,7 +40,8 @@ def compare_size(rand,guess,count):
         no_form.configure(state='disabled')
         send_btn.config(state='normal')
         return "Total score is ", count, " please enter your number in the field above"
-
+def get_count(count):
+    return count
 
 def get_phone_number():
     phone_number = phone_form.get()
@@ -62,12 +63,7 @@ def send_msg(phone_number):
     pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
 
 
-
-        
-
-
-# Continue the ongoing game or end it
-def play_game():
+def game():
     global count
     valid = False
     if not valid:
@@ -82,14 +78,11 @@ def play_game():
 
 title = tk.Label(window,text="Amazing game",font=("Arial",18),fg="#fffcbd",bg="#36454f")
 
-result = tk.Label(window, text="Click START to begin a new game", font=("Arial", 12, "normal", "italic"),fg = "White", bg="#36454f", justify=tk.LEFT)
-phone_lable = tk.Label(window, text="Enter phone number", font=("Arial", 11, "normal", "italic"),fg = "Whitesmoke", bg="#36454f", justify=tk.LEFT)
+result = tk.Label(window, text="Start the game", font=("Arial", 12, "normal", "italic"),fg = "White", bg="#36454f", justify=tk.LEFT)
+phone_lbl = tk.Label(window, text="Enter phone number", font=("Arial", 11, "normal", "italic"),fg = "Whitesmoke", bg="#36454f", justify=tk.LEFT)
 
-
-
-guess_btn = tk.Button(window,text="Guess",font=("Arial",13), state='normal', fg="#13d675",bg="#282C35", command=play_game)
+guess_btn = tk.Button(window,text="Guess",font=("Arial",13), state='normal', fg="#13d675",bg="#282C35", command=game)
 send_btn = tk.Button(window,text="SEND",font=("Arial",13), state='disabled', fg="white",bg="#0088D8", command=get_phone_number)
-
 
 exit_btn = tk.Button(window,text="Exit Game",font=("Arial",14), fg="White", bg="#b82741", command=exit)
 guessed_num = tk.StringVar()
@@ -98,23 +91,15 @@ no_form = tk.Entry(window,font=("Arial",11),textvariable=guessed_num)
 phone_form = tk.Entry(window,font=("Arial",11),textvariable=phone_number)
 
 
-# Place the labels
-
 title.place(x=290, y=50)
 result.place(x=250, y=250)
 
-# Place the buttons
 exit_btn.place(x=300,y=320)
 guess_btn.place(x=450, y=145) 
 send_btn.place(x=450, y=210) 
 
-
-# Place the entry field
 no_form.place(x=180, y=150)
 phone_form.place(x=180, y=220)
-phone_lable.place(x=180, y=195)
+phone_lbl.place(x=180, y=195)
 
-
-
-# Start the window
 window.mainloop()
