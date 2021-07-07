@@ -25,12 +25,6 @@ count = 10
 def update(text):
     result.configure(text=text)
 
-# Create a new game
-def new_game():
-    guess_button.config(state='normal')
-    global TARGET
-    TARGET = random.randint(0, 1000)
-    update(text="Guess a number between 1 and 1000")
 
 def compare_size(rand,guess,count):
     if(rand > guess):
@@ -50,26 +44,23 @@ def compare_size(rand,guess,count):
 
 def get_phone_number():
     phone_number = phone_form.get()
-    if(len(phone_number) != 13):
-        result =  "Please enter a valid phone number: "
-        update(result)
 
     if(phone_number[:4] != "+254"):
         result = "Country code begins with +254: "
         update(result)
-
-
-    send_msg(phone_number)
+    elif(len(phone_number) != 13):        
+        result =  "Please enter a valid phone number: "
+        update(result)
+    else:
+        send_msg(phone_number)
 
 def send_msg(phone_number):
     hour = int(datetime.datetime.now().hour)
     minute = int(datetime.datetime.now().minute)
     message = "You scored  out of 10"
     update(message)
-    try:
-        pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
-    except ValueError:
-        print("wtr")
+    pywhatkit.sendwhatmsg(phone_number , message , hour , minute+2)
+
 
 
         
@@ -95,9 +86,8 @@ result = tk.Label(window, text="Click START to begin a new game", font=("Arial",
 phone_lable = tk.Label(window, text="Enter phone number", font=("Arial", 11, "normal", "italic"),fg = "Whitesmoke", bg="#36454f", justify=tk.LEFT)
 
 
-play_button = tk.Button(window, text="START", font=("Arial", 12, "bold"), fg = "Black", bg="#00B25D", command=new_game)
 
-guess_button = tk.Button(window,text="Guess",font=("Arial",13), state='disabled', fg="#13d675",bg="#282C35", command=play_game)
+guess_button = tk.Button(window,text="Guess",font=("Arial",13), state='normal', fg="#13d675",bg="#282C35", command=play_game)
 send_button = tk.Button(window,text="SEND",font=("Arial",13), state='disabled', fg="gray",bg="#0088D8", command=get_phone_number)
 
 
@@ -123,7 +113,6 @@ exit_button.place(x=300,y=320)
 guess_button.place(x=450, y=145) 
 send_button.place(x=450, y=210) 
 
-play_button.place(x=325, y=90)
 
 # Place the entry field
 number_form.place(x=180, y=150)
